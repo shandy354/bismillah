@@ -1,0 +1,38 @@
+
+body {
+  /* padding-top: 500px; */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: aliceblue;
+}
+.cotainer{
+  padding-top: 45px;
+  padding-left: 95px;
+  padding-right: 95px;
+
+}
+.cotainer1{
+  padding-top: 15px;
+  padding-left: 95px;
+  padding-right: 95px;
+
+}
+.container{
+  padding-top: 10px;
+  padding-left: 95px;
+  padding-right: 95px;
+  text-align: center;
+}
+.container2{
+  padding-top: 10px;
+  padding-left: 95px;
+  padding-right: 95px;
+}
+
+a:hover{
+	box-shadow: 0 20px 30px rgba(0.24, 3, 0, 0.24);
+}
+.deskripsi {
+  /* padding-top: 10px; */
+  font-size: large;
+  text-align: justify;
+}

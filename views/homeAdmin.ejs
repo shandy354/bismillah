@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PLANTS</title>
+    <%- include('./partials/head') %>
+  </head>
+  <header>
+    <%- include("./partials/navAdmin") %>
+  </header>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <body style="background-color:aliceblue">
+    <div class="cotainer1 mt-100 ">
+      <a href="/artikel/addView" class="btn btn-success px-3 py-1 active" style="text-align: center;"><h4>ADD Artikel Home</h4> </a>
+      <div class="row justify-content-center">
+        <div class="col-md-8 mb-4 shadow-custom">
+          <div class="card border-0 rounded shadow-custom">
+            <div class="card-body">
+              <div class="card mb-3 border-light" style="max-width: 850px;">
+                <div class="row g-0">
+                  <img src="Kabupaten Kediri.jpg" class="img-fluid rounded-start" alt="...">
+                   <h5 style="font-weight: bold; padding-top: 15px;">Geografi Kabupaten Kediri</h5>
+                    <p class="deskripsi">
+                      Posisi geografi Kabupaten Kediri terletak antara 111°47′ 05″ sampai dengan  112°18’20” 
+                      Bujur Timur dan 7° 36′ 12″ sampai dengan  8° 0′ 32″ Lintang Selatan. Kondisi topografi 
+                      terdiri dari dataran rendah dan pegunungan yang dilalui aliran sungai Brantas yang membelah 
+                      dari selatan  ke utara. Suhu udara berkisar antara 23° C sampai dengan 31° C dengan tingkat
+                      curah hujan rata-rata sekitar 1.652 mm per hari. Secara keseluruhan luas wilayah ada sekitar
+                      1.386,05  Km2 atau sekitar 5%, dari luas wilayah Provinsi Jawa Timur
+                    </p>
+                   <h5 style="font-weight: bold; padding-top: 15px">Wilayah Kabupaten Kediri</h5>
+                    <p class="deskripsi">
+                      Wilayah Kabupaten Kediri terbagi menjadi 26 kecamatan. Selain itu, kondisi geografisnya 
+                      diapit oleh dua gunung yang berbeda sifatnya, yaitu Gunung Kelud di sebelah Timur yang
+                      bersifat vulkanik dan Gunung Wilis di sebelah barat yang bersifat non vulkanik.
+                      Sedangkan tepat di bagian tengah wilayah Kabupaten Kediri melintas Sungai Brantas yang 
+                      membelah wilayah Kabupaten Kediri menjadi dua bagian, yaitu bagian barat Sungai Brantas,
+                      yang merupakan perbukitan lereng Gunung Wilis dan Gunung Klotok, serta bagian timur Sungai Brantas.
+                    </p>
+                  <h5 style="font-weight: bold; padding-top: 15px">Batas Wilayah</h5>
+                    <p class="deskripsi">
+                      Kabupaten Kediri berbatasan dengan Kabupaten Jombang di Utara, Kabupaten Malang dan 
+                      Kabupaten Blitar di Timur, Kabupaten Blitar dan Kabupaten Tulungagung di Selatan, 
+                      serta Kabupaten Nganjuk di Barat dan Utara. Kota Kediri menjadi enklave dari Kabupaten Kediri. 
+                      Kabupaten Kediri memiliki luas wilayah 1.523,97 km²[6] yang terbagi menjadi 26 kecamatan. 
+                      Pada tahun 2021, penduduk kabupaten ini berjumlah 1.673.157 jiwa dengan kepadatan 1.097 jiwa/km
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- samping -->
+        <div class="col-md-4 mb-4">
+          <div class="card rounded shadow-custom mb-4"">
+            <% artikel.forEach(artikels => { %>
+            <div class="card-body mx-auto">
+              <div class="card mb-3 border-light shadow-custom " style="max-width: 22rem; border-radius: 4% ">
+                <img src="/images/<%= artikels.img %>" style=" max-height: 15rem; border-radius: rounded;" class="card-img-top" alt="...">
+                  <p class="card-text" style="padding-top: 8px; text-align: justify;"> <b><%= artikels.judul %></b><%= artikels.deskripsi %></p>
+              </div>
+              <div class="card-footer rounded shadow-custom border-light " style="background-color: rgb(242, 241, 241);">
+                <div class="col-md-12 text-center">
+                  <a href="/artikel/<%= artikels.id %>" class="btn btn-primary px-4 py-1">Edit</a>
+                  <a href="/artikel/delete/<%= artikels.id %>" class="btn btn-outline-danger px-3 py-1 " onclick="return confirm('Are you sure you want to delete this tanaman?');">Hapus</a>
+                </div>
+              </div>
+              </div>
+              <% }) %> 
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <%- include("./partials/footer") %>
+    </footer>
+  </body>
+</html>
+

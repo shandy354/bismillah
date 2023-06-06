@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanaman</title>
+    <%- include('./partials/head') %>
+</head>
+<header>
+    <%- include("./partials/navAdmin") %>
+</header>
+<body>
+    <div class="container mt-100 ">
+       <a href="/tanaman/addView" class="btn btn-success px-3 py-1 active"><h4>Tambah Data Tanaman</h4> </a>
+        <div class="row justify-content-center">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                  <% tanaman.forEach(tanamans => { %>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="/images/<%= tanamans.img %>" class="card-img-top" alt="..." >
+                      <div class="card-body">
+                        <h5 class="card-title"><%= tanamans.name %></h5>
+                      </div>
+                      
+                      <div class="card-footer">
+                        <div class="col-md-12 text-center">
+                          <a href="/tanaman/edit/<%= tanamans.id %>" class="btn btn-primary px-4 py-1">Edit</a>
+                          <a href="/tanaman/delete/<%= tanamans.id %>" class="btn btn-outline-danger px-3 py-1 " onclick="return confirm('Are you sure you want to delete this tanaman?');">Hapus</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% }) %> 
+                </div> 
+        </div>
+    </div>
+</body>
+</html>

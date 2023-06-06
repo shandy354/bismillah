@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Artikel</title>
+    <%- include('./partials/head') %>
+</head>
+<header>
+    <%- include("./partials/navAdmin") %>
+</header>
+<body>
+    <div class="container2">
+      <h1 class="my-5 text-center">Tambah Artikel</h1>
+      <form class="my-5 " enctype="multipart/form-data" method="POST" action="/artikel">
+        <div class="mb-3">
+          <label for="nama" class="form-label"  style="font-size: larger;">Judul Artikel</label>
+          <input type="text" class="form-control" name="judul" id="judul" placeholder="Simpang Lima Gumul (SLG)" value="" required>
+        </div>
+        <div class="form-group">
+          <label for="deskripsi" style="padding-top: 5px; font-size: larger;">Example textarea</label>
+          <textarea class="form-control" id="deskripsi" rows="3" name="deskripsi"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="formFile" class="form-label" style="padding-top: 15px; font-size: larger;">Gambar Artikel</label>
+          <input class="form-control" type="file" name="img">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div class="text-center my-5">
+        <p class="fw-bold">Another</p>
+        <a href="/admin" class="text-decoration-none text-secondary fw-bold px-3 py-1">Back to Data All</a>
+      </div>
+    </div>
+
+</body>
+</html>
